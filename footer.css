@@ -481,27 +481,49 @@
   }
 }
 @media (max-width: 700px) {
-  .zalooa-footer-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    padding: 0 1vw;
+.zalooa-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 100vw;
+    background: #fff;
   }
   .zalooa-footer-col {
-    width: 99vw;
-    max-width: 99vw;
+    width: 50vw;
+    max-width: 50vw;
     min-width: 0;
-    flex: 1 1 99vw;
+    flex: 1 1 50vw;
     align-items: flex-start;
-    padding-bottom: 8px;
+    padding: 13px 8px 12px 12px;
     border-bottom: 1px solid #ffe69b33;
+    border-right: 1px solid #ffe69b33;
+    box-sizing: border-box;
     margin: 0;
-    font-size: 0.91rem;
+    font-size: 0.97rem;
+    background: #fff;
   }
-  .zalooa-footer-col:last-child {
+  .zalooa-footer-col:nth-child(2n) {
+    border-right: none;
+  }
+  /* Hàng cuối cùng bỏ border-bottom */
+  .zalooa-footer-col:nth-last-child(-n+2) {
     border-bottom: none;
   }
+  /* Nếu tổng số cột lẻ, cột cuối cùng chiếm full hàng dưới */
+  .zalooa-footer-col:only-child,
+  .zalooa-footer-col:last-child:nth-child(odd) {
+    width: 100vw;
+    max-width: 100vw;
+    border-right: none;
+  }
+
+  
   .zalooa-company-info-bar {
     padding: 12px 0 0 0;
   }
